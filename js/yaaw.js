@@ -167,7 +167,7 @@ var YAAW = (function() {
           indexes.push(n.getAttribute("data-index"));
         });
         if (indexes.length == 0) {
-          ARIA2.main_alert("alert-error", "At least one file should be selected. Or just stop the task.", 5000);
+          ARIA2.main_alert("alert-error", "至少选中一个文件,或者停止任务", 5000);
         } else {
           var options = {
             "select-file": indexes.join(","),
@@ -242,7 +242,7 @@ var YAAW = (function() {
         }
       } else {
         $("#torrent-up-input").remove();
-        $("#torrent-up-btn").addClass("disabled").tooltip({title: "File API is Not Supported."});
+        $("#torrent-up-btn").addClass("disabled").tooltip({title: "文件 API 不支持"});
       }
 
       if (window.applicationCache) {
@@ -444,35 +444,35 @@ var YAAW = (function() {
         error_msg: function() {
           var error_code_map = {
             0: "",
-            1: "unknown error occurred.",
-            2: "time out occurred.",
-            3: "resource was not found.",
-            4: "resource was not found. See --max-file-not-found option.",
-            5: "resource was not found. See --lowest-speed-limit option.",
-            6: "network problem occurred.",
-            7: "unfinished download.",
-            8: "remote server did not support resume when resume was required to complete download.",
-            9: "there was not enough disk space available.",
+            1: "发生未知错误",
+            2: "超时",
+            3: "资源未找到",
+            4: "资源未找到 见 --max-file-not-found 选项",
+            5: "资源未找到 见 --lowest-speed-limit 选项",
+            6: "发生网络问题",
+            7: "未完成下载",
+            8: "需要断点续传完成任务,远程服务器不支持断点续传",
+            9: "剩余空间不足",
             10: "piece length was different from one in .aria2 control file. See --allow-piece-length-change option.",
             11: "aria2 was downloading same file at that moment.",
             12: "aria2 was downloading same info hash torrent at that moment.",
-            13: "file already existed. See --allow-overwrite option.",
-            14: "renaming file failed. See --auto-file-renaming option.",
-            15: "aria2 could not open existing file.",
+            13: "文件已存在 见 --allow-overwrite 选项",
+            14: "重命名失败 见 --auto-file-renaming 选项",
+            15: "aria2 无法打开已存在的文件",
             16: "aria2 could not create new file or truncate existing file.",
-            17: "I/O error occurred.",
-            18: "aria2 could not create directory.",
-            19: "name resolution failed.",
+            17: "发生读写错误",
+            18: "aria2 不能创建目录",
+            19: "域名解析失败",
             20: "could not parse Metalink document.",
-            21: "FTP command failed.",
-            22: "HTTP response header was bad or unexpected.",
-            23: "too many redirections occurred.",
-            24: "HTTP authorization failed.",
+            21: "FTP 命令失败",
+            22: "HTTP 未预料的响应头或有问题",
+            23: "过多重定向",
+            24: "HTTP 授权失败",
             25: "aria2 could not parse bencoded file(usually .torrent file).",
-            26: ".torrent file was corrupted or missing information that aria2 needed.",
-            27: "Magnet URI was bad.",
+            26: "种子文件损坏或缺少必要信息",
+            27: "磁力链接有问题",
             28: "bad/unrecognized option was given or unexpected option argument was given.",
-            29: "the remote server was unable to handle the request due to a temporary overloading or maintenance.",
+            29: "远程服务器无法处理请求,可能存在过载或在维护中",
             30: "aria2 could not parse JSON-RPC request.",
           };
           return function(text) {
@@ -525,7 +525,7 @@ var YAAW = (function() {
       },
 
       clean: function() {
-        $("#uri-input").attr("placeholder", "HTTP, FTP or Magnet");
+        $("#uri-input").attr("placeholder", "HTTP, FTP 或者磁力链接");
         $("#add-task-modal .input-clear").val("");
         $("#add-task-alert").hide();
         torrent_file = null;
